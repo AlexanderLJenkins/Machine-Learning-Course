@@ -16,13 +16,8 @@ J = 0;
 % J = 1/2m sum^m_i (h(x^i) -y^i)^2
 % h(x) = theta^T x = theta_0 + theta_1 x
 
-sum = 0;
-for i=1:m,
-  sum = sum + (theta'*X(i,:)' - y(i))^2;
-end;
-
-J = (1/(2*m))*sum;
-
+A = X*theta - y;
+J = (1/(2*m))*A'*A;
 % =========================================================================
 
 end
