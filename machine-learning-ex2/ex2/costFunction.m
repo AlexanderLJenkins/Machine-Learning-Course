@@ -22,7 +22,7 @@ grad = zeros(size(theta));
 
 hyp = sigmoid(theta'*X');
 J = (1/m) * sum(-y.*log(hyp') - (1-y).*log(1-hyp'));
-
+grad = (1/m) * X'*(hyp'-y);
 
 % =============================================================
 
