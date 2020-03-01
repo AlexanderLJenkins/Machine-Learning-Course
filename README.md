@@ -19,4 +19,9 @@ Exercise 2:
 - I created a function to map the features to high order polynomials. 
 - I created a function to regularise the higher order terms to prevent overfitting (adjusted the cost and gradient calculations).
 - Visualised the decision boundary with plot functions, and at different values of the regularisation parameter.
+
+Exercise 3:
+  In this exercise, I have implemented a one-vs-all logistic regression and neural networks to recognize hand-written digits. To do this, hand-written digits are parsed as a 20x20 pixel image, and I have used each pixel as a feature. Neural networks give a higher accuracy on the training set due to their ability to form more complex hypothesis. Logistic regression is a linear classifier, we could represent more complex hypothesis by adding more features, but it would become very expensive to train.
+  
+  
  
