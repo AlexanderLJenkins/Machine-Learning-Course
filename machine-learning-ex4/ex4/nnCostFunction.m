@@ -62,6 +62,8 @@ Theta2_grad = zeros(size(Theta2));
 %               and Theta2_grad from Part 2.
 %
 
+
+% -------------------------------------------------------------
 % Recode the labels (y) as vectors containing only values 0 or 1
 new_y = 1:10;
 y = (new_y == y);
@@ -82,10 +84,9 @@ J = J + reg;
 for k=1:num_labels,
   J = J + (1/m) * sum(-y(:,k).*log(hyp(k,:)') - (1-y(:,k)).*log(1-hyp(k,:)'));
 end;
-
-%[_, p] = max(a3', [], 2);
-
 % -------------------------------------------------------------
+
+
 
 % =========================================================================
 
