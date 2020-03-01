@@ -74,6 +74,11 @@ a2 = a2';
 a2 = [ones(m, 1) a2];
 hyp = sigmoid(Theta2 * a2');
 
+% Compute the regularisation term (don't regularise the bias units)
+reg = (lambda/(2*m)) * (sum(Theta1(:).^2) + sum(Theta2(:).^2) - sum(Theta1(:,1).^2) - sum(Theta2(:,1).^2));
+J = J + reg;
+
+% Compute the cost
 for k=1:num_labels,
   J = J + (1/m) * sum(-y(:,k).*log(hyp(k,:)') - (1-y(:,k)).*log(1-hyp(k,:)'));
 end;
