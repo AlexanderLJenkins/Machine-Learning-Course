@@ -64,8 +64,9 @@ Theta2_grad = zeros(size(Theta2));
 
 
 % -------------------------------------------------------------
+% PART1: Forward propagation algorithm, and regularised cost calculation
 % Recode the labels (y) as vectors containing only values 0 or 1
-new_y = 1:10;
+new_y = 1:num_labels;
 y = (new_y == y);
 
 % Feed forward the neural network
@@ -84,9 +85,33 @@ J = J + reg;
 for k=1:num_labels,
   J = J + (1/m) * sum(-y(:,k).*log(hyp(k,:)') - (1-y(:,k)).*log(1-hyp(k,:)'));
 end;
+
 % -------------------------------------------------------------
+% PART2: Backpropagation algorithm
+hyp = hyp';
+DELTA2 = 0; DELTA1 = 0;
+for t = 1:m,
+  % Compute the error of each node in each layer, delta
+  delta3 = hyp(t, :) - y(t,:);
+  z2 = Theta1 * a1(t,:)';
+  z2 = [1; z2];
+  delta2 = (Theta2')*delta3'.*sigmoidGradient(z2);
+  delta2 = delta2(2:end);
+  delta3 = delta3';
 
+  % Accumulate the gradient associated with the error of each node in each layer, DELTA
+  DELTA2 = DELTA2 + delta3 * (a2(t, :));
+  DELTA1 = DELTA1 + delta2 * (a1(t, :));
+end;
 
+% Calculate the unregularised gradient for the nn cost function
+Theta2_grad = DELTA2 ./ m;
+Theta1_grad = DELTA1 ./ m;
+
+% -------------------------------------------------------------
+% PART3: Regularising the gradient
+Theta2_grad(:, 2:end) = Theta2_grad(:, 2:end) + (lambda / m) .* Theta2(:, 2:end);
+Theta1_grad(:, 2:end) = Theta1_grad(:, 2:end) + (lambda / m) .* Theta1(:, 2:end);
 
 % =========================================================================
 
