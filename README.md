@@ -45,8 +45,10 @@ Exercise 4:
   Exercise 6:
     In this exercise, I will implement a Support Vector Machine (SVM) to build a spam classifier. 
 
-1. I visualised how changing the regularisation parameter for a SVM affected the decision boundary fitted.
+1. Using SVMs with various examples of 2D datasets. Experimenting with these datasets has given me the intuition of how SVMs work and how to use a Gaussian kernel with SVMs.
+- I visualised how changing the regularisation parameter for a SVM affected the decision boundary fitted.
+- Implemented a SVM with a Gaussian kernel to do non-linear classification.
+- Implemented an algorithm to select the parameters for regularisation and parameterisation of gaussian kernel, such that the misclassification on error on the cross-validation set is the lowest.
 
-2. Implemented a SVM with a Gaussian kernel to do non-linear classification.
-
+2. Using SVMs to build a spam classifier for emails.
 
