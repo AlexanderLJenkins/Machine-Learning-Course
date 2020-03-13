@@ -51,5 +51,6 @@ Exercise 4:
 - Implemented an algorithm to select the parameters for regularisation and parameterisation of gaussian kernel, such that the misclassification on error on the cross-validation set is the lowest.
 
 2. Using SVMs to build a spam classifier for emails (using email body only).
-- Pre-processing emails (lower case, word stemming, normalising phrases,...) and forming a vocabulary list (most common words in emails) to map processed emails into an array of indices relating to position in vocabulary list.
-- Extracting features from emails
+- Pre-processing emails (lower case, word stemming, normalising phrases,...) and forming a vocabulary list (most common words in emails) to map processed emails into an array of indices relating to position in vocabulary list. Rarely common words are not to be included in the vocabulary list, as this could lead to overfitting.
+- Constructed a feature vector for each email. This is a binary feature vector, with labels denoting if words in vocabulary list appear in the email.
+- Tested this SVM on my own emails.
