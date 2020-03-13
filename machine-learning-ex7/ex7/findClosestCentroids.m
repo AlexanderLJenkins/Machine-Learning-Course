@@ -21,12 +21,22 @@ idx = zeros(size(X,1), 1);
 % Note: You can use a for-loop over the examples to compute this.
 %
 
+m = size(X, 1);
 
+for i = 1:m,
 
+	% Assign the data point to the cluster w/ closest centroid
+	minJ = sum((X(i,:) - centroids(1,:)).^2); 
+	idx(i) = 1;
 
-
-
-
+	for k = 2:K,
+		J = sum((X(i,:) - centroids(k,:)).^2);
+		if (J <= minJ),
+			idx(i) = k;
+			minJ = J;
+		end;
+	end;
+end;
 % =============================================================
 
 end
