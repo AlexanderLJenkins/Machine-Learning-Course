@@ -54,3 +54,8 @@ Exercise 4:
 - Pre-processing emails (lower case, word stemming, normalising phrases,...) and forming a vocabulary list (most common words in emails) to map processed emails into an array of indices relating to position in vocabulary list. Rarely common words are not to be included in the vocabulary list, as this could lead to overfitting.
 - Constructed a feature vector for each email. This is a binary feature vector, with labels denoting if words in vocabulary list appear in the email.
 - Tested this SVM on my own emails.
+
+  Exercise 7:
+    In this exercise, I have implemented the K-means clustering algorithm and applied it to compress an RGB image. I then implemented a Principal Component Analysis (PCA) to find a low-dimensional representation of face images.
+
+
