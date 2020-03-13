@@ -98,13 +98,13 @@ while ~isempty(email_contents)
     %
 
 
-
-
-
-
-
-
-
+    for i = 1:numel(vocabList),
+        if (strcmp(str, vocabList{i})),
+            % Word found, add to word_indicies
+            word_indices = [word_indices; i];
+            break;
+        end;
+    end;
 
     % =============================================================
 

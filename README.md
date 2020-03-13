@@ -50,5 +50,6 @@ Exercise 4:
 - Implemented a SVM with a Gaussian kernel to do non-linear classification.
 - Implemented an algorithm to select the parameters for regularisation and parameterisation of gaussian kernel, such that the misclassification on error on the cross-validation set is the lowest.
 
-2. Using SVMs to build a spam classifier for emails.
-
+2. Using SVMs to build a spam classifier for emails (using email body only).
+- Pre-processing emails (lower case, word stemming, normalising phrases,...) and forming a vocabulary list (most common words in emails) to map processed emails into an array of indices relating to position in vocabulary list.
+- Extracting features from emails
