@@ -50,7 +50,7 @@ x = zeros(n, 1);
 
 for i = 1:numel(word_indices),
 	index = word_indices(i);
-	x(i) = 1;
+	x(index) = 1;
 end;
 
 % =========================================================================
